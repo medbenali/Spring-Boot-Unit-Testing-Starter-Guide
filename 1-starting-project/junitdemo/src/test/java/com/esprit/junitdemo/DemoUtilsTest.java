@@ -2,6 +2,8 @@ package com.esprit.junitdemo;
 
 import org.junit.jupiter.api.*;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 //@DisplayNameGeneration(DisplayNameGenerator.Simple.class)
@@ -88,6 +90,34 @@ class DemoUtilsTest {
         assertTrue(demoUtils.isGreater(gradeOne, gradeTwo), "This should return True");
 
         assertFalse(demoUtils.isGreater(gradeTwo, gradeOne), "This should return False");
+    }
+
+    @Test
+    @DisplayName("Array Equals")
+    void testArrayEquals()
+    {
+        String [] stringArray = { "A", "B", "C"};
+
+        assertArrayEquals(stringArray, demoUtils.getFirstThreeLettersOfAlphabet(),"Arrays should be the same");
+
+    }
+
+    @Test
+    @DisplayName("Iterable equals")
+    void testIterableEquals(){
+
+        List<String> theList = List.of("es", "pr", "it");
+
+        assertIterableEquals(theList, demoUtils.getAcademyInList(), "Expected list should be same as actual list");
+    }
+
+    @Test
+    @DisplayName("Lines match")
+    void testLinesMatch()
+    {
+        List<String> theList = List.of("es", "pr", "it");
+
+        assertLinesMatch(theList, demoUtils.getAcademyInList(),"Lines should match");
     }
 
 
