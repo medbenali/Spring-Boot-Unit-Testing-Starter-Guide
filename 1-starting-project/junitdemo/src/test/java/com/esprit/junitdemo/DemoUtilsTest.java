@@ -11,6 +11,11 @@ import static org.junit.jupiter.api.Assertions.*;
 //@DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 //@DisplayNameGeneration(DisplayNameGenerator.IndicativeSentences.class)
 //@DisplayNameGeneration(ReplaceCamelCase.class)
+
+//@TestMethodOrder(MethodOrderer.MethodName.class)
+//@TestMethodOrder(MethodOrderer.DisplayName.class)
+//@TestMethodOrder(MethodOrderer.Random.class)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class DemoUtilsTest {
 
     DemoUtils demoUtils;
@@ -44,6 +49,7 @@ class DemoUtilsTest {
 
     @Test
     @DisplayName("Equals and Not Equals")
+    @Order(1)
     void testEqualsAndNotEquals()
     {
         System.out.println("Running test: testEqualsAndNotEquals");
@@ -58,6 +64,7 @@ class DemoUtilsTest {
 
     @Test
     @DisplayName("Null and Not Null")
+    @Order(0)
     void testNullAndNotNull()
     {
         System.out.println("Running test: testNullAndNotNull");
@@ -83,6 +90,7 @@ class DemoUtilsTest {
 
     @Test
     @DisplayName("True and False")
+    @Order(30)
     void testTrueFalse()
     {
         int gradeOne = 10;
@@ -114,6 +122,7 @@ class DemoUtilsTest {
 
     @Test
     @DisplayName("Lines match")
+    @Order(50)
     void testLinesMatch()
     {
         List<String> theList = List.of("es", "pr", "it");
