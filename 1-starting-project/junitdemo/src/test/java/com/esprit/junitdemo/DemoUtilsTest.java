@@ -146,6 +146,13 @@ class DemoUtilsTest {
         assertTimeoutPreemptively(Duration.ofSeconds(3), () -> { demoUtils.checkTimeout();}, "Method should execute in 3 seconds");
     }
 
+    @Test
+    @DisplayName("Multiply")
+    void testMultiply(){
+
+        assertEquals(10, demoUtils.multiply(5,2), "5*2 must be 10");
+    }
+
 
 
     /*
